@@ -25,11 +25,11 @@ Para isso, utilizaremos o editor de código Visual Studio Code com algumas exten
 
 4. Na próxima etapa, escolha a opção `"More..."` para procurar por um template específico, que não aparece na lista padrão.
 
-   ![Painel de seleção de archetype maven, com a opção "More..." destacada.](./imgagens/mc_02/mc2-01.png)
+   ![Painel de seleção de archetype maven, com a opção "More..." destacada.](./imagens/mc_02/mc2-01.png)
 
 5. Pesquise por `"jakartaee10-minimal"`, Jakarta EE 10 Minimal Maven Archetype, da Eclipse Foundation (_Group ID:_ `org.eclipse.starter`). Na janela seguinte, selecione a versão mais recente disponível (versão `1.1.0`no momento de criação deste material).
 
-   ![Painel de pesquisa de archetype maven, com a opção "jakartaee10-minimal" destacada.](./imgagens/mc_02/mc2-02.png)
+   ![Painel de pesquisa de archetype maven, com a opção "jakartaee10-minimal" destacada.](./imagens/mc_02/mc2-02.png)
 
 > [!IMPORTANT]
 > Vou indicar esse archetype por ser mais atual e recomendado para projetos Jakarta EE 10 ou superior, diferente do archetype padrão que estávamos utilizando (`maven-archetype-webapp`).
@@ -47,7 +47,7 @@ Para isso, utilizaremos o editor de código Visual Studio Code com algumas exten
 
 10. Após a criação do projeto, caso a pasta do projeto não seja aberta automaticamente, acesse a aba de arquivos do Visual Studio Code e abra a pasta do projeto que foi criado. Você deve ver a estrutura do projeto com as pastas `src/main/java`, `src/main/resources`, `src/main/webapp` e o arquivo `pom.xml` na raiz do projeto.
 
-    ![Estrutura do projeto Java Web criado, com as pastas src/main/java, src/main/resources, src/main/webapp e o arquivo pom.xml.](./imgagens/mc_02/mc2-03.png)
+    ![Estrutura do projeto Java Web criado, com as pastas src/main/java, src/main/resources, src/main/webapp e o arquivo pom.xml.](./imagens/mc_02/mc2-03.png)
 
 ---
 
@@ -58,11 +58,11 @@ Para isso, utilizaremos o editor de código Visual Studio Code com algumas exten
 
 1. Na seção `Explorador` do Visual Studio Code, acesse a aba de `Servers`.
 
-   ![Seção de servidores do Visual Studio Code, com a extensão "Community Server Connector" instalada.](./imgagens/mc_02/mc2-04.png)
+   ![Seção de servidores do Visual Studio Code, com a extensão "Community Server Connector" instalada.](./imagens/mc_02/mc2-04.png)
 
 2. Clique no ícone de `+`, na margem direita da aba de `Servers`, para adicionar um novo servidor. Ao ser perguntado se deseja realizar o download do servidor, selecione `Yes`.
 
-   ![Janela de download do servidor, com a opção "Yes" selecionada para baixar o Apache Tomcat.](./imgagens/mc_02/mc2-05.png)
+   ![Janela de download do servidor, com a opção "Yes" selecionada para baixar o Apache Tomcat.](./imagens/mc_02/mc2-05.png)
 
 3. Pesquise por `Tomcat` e selecione a versão mais recente disponível (versão `11.0.0-M6` no momento de criação deste material).
 
@@ -71,7 +71,7 @@ Para isso, utilizaremos o editor de código Visual Studio Code com algumas exten
    > Se o download for bem-sucedido, avance para o passo 6.
 
 5. Caso haja algum erro no processo de download do servidor, pela extensão `Community Server Connector`, ou queira realizar o download manualmente, você pode fazê-lo através do site oficial do Apache Tomcat (https://tomcat.apache.org/download-11.cgi). Você deve realizar o download do arquivo `zip` (Windows), ou `tar.gz` (Linux/Mac), na seção `Binary Distributions - Core` e extrair o conteúdo do arquivo em uma pasta local.
-   ![Download manual do Apache Tomcat](./imgagens/mc_02/mc2-06.png)
+   ![Download manual do Apache Tomcat](./imagens/mc_02/mc2-06.png)
 
 Após isso, basta seguir os passos abaixo para adicionar o Tomcat à extensão:
 
@@ -80,13 +80,13 @@ Após isso, basta seguir os passos abaixo para adicionar o Tomcat à extensão:
 - Selecione a pasta onde o Tomcat foi extraído para adicioná-lo à extensão.
 
 - Na tela de configurações do servidor, informe um nome para o servidor (exemplo: `Tomcat 11.x`) e clique no botão `Finish` para finalizar a configuração.
-  ![Configuração manual do Apache Tomcat na extensão "Community Server Connector"](./imgagens/mc_02/mc2-07.png)
+  ![Configuração manual do Apache Tomcat na extensão "Community Server Connector"](./imagens/mc_02/mc2-07.png)
 
 6. Após a instalação do servidor, o Tomcat estará disponível na seção de `Servers`.
 
 - Clique com o botão direito sobre ele e selecione a opção `Start` para iniciar o servidor.
 
-  ![Iniciando o servidor Apache Tomcat através da extensão "Community Server Connector"](./imgagens/mc_02/mc2-08.png)
+  ![Iniciando o servidor Apache Tomcat através da extensão "Community Server Connector"](./imagens/mc_02/mc2-08.png)
 
 ---
 
@@ -146,7 +146,7 @@ Após isso, basta seguir os passos abaixo para adicionar o Tomcat à extensão:
 
 - Na aba `Lifecycle`, você pode encontrar as fases do ciclo de vida do Maven, como `clean`, `compile`, `package`, etc. Basta clicar com o mouse sobre a fase desejada para executá-la.
 
-  ![Executando o comando "package" do Maven através da extensão "Maven for Java"](./imgagens/mc_02/mc2-09.png)
+  ![Executando o comando "package" do Maven através da extensão "Maven for Java"](./imagens/mc_02/mc2-09.png)
 
 5. Após gerar o arquivo `WAR`, precisamos implantá-lo no Tomcat.
 
