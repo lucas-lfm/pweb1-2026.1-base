@@ -72,10 +72,10 @@
 
 ---
 
-5. Uma das características importantes de uma aplicação Web é a forma como o conteúdo de resposta é gerado e formatado. Com base nisso:
+5. Uma das características importantes de uma aplicação Web é a forma como o conteúdo de resposta é gerado e formatado. Com base nisso, no ecosistema de desenvolvimento Java Web (com Servlets e JSPs), responda:
 
     a) Explique como arquivos estáticos (como HTML, CSS e JavaScript) e arquivos dinâmicos (como JSPs) são utilizados em uma aplicação Java Web para gerar o conteúdo de resposta. 
 
     b) Qual pasta do projeto é geralmente usada para armazenar arquivos estáticos? Por padrão, os arquivos estáticos, dentro dessa pasta, são acessíveis publicamente?
 
-    c) Qual pasta do projeto é geralmente usada para armazenar arquivos dinâmicos (JSPs)? Por padrão, os arquivos JSPs, dentro dessa pasta, são acessíveis publicamente?
+    c) Qual pasta do projeto é geralmente usada para armazenar arquivos dinâmicos (JSPs), que representam a camada de visualização? Por padrão, os arquivos JSPs, dentro dessa pasta, são acessíveis publicamente?
