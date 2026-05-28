@@ -13,7 +13,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="3" align="center"><strong>Atividade Teórico-Prática: Arquitetura de Aplicações Web com Servlets e JSPs</strong></td>
+        <td colspan="3" align="center"><strong>Atividade Prática: Cadastro e listagem de usuários com organização MVC mínima</strong></td>
     </tr>
 </thead>
 <tbody>
@@ -21,61 +21,65 @@
         <td colspan="3"><b>Instruções:</b></td>
     </tr>
     <tr>
-        <td colspan="3">- Todas as questões práticas devem ser resolvidas em Java, utilizando os fundamentos da linguagem, de Servlets e JSPs.</td>
+        <td colspan="3">- A prática deve ser resolvida em Java, utilizando os fundamentos da linguagem, de Servlets, JSPs e Padrão MVC.</td>
     </tr>
     <tr>
-        <td colspan="3">- A entrega deve ser feita anexando o link do repositório no Classroom. Pode ser utilizado o mesmo repositório geral para a disciplina, caso tenha criado. Ou, ainda, criar um repositório específico para esta atividade.</td>
+        <td colspan="3">- A entrega deve ser feita anexando o link do repositório no Classroom. Pode ser utilizado o mesmo repositório geral para a disciplina, caso tenha criado. Nesse caso, utilize uma estrutura de pastas adequada para separar a atividade e envie o link onde encontra-se a pasta desta atividade dentro do repositório.</td>
     </tr>
     <tr>
-        <td colspan="3">- O uso de ferramentas de IA deve ser feito com responsabilidade e seguindo o <a href="https://docs.google.com/document/d/1eUUiuaxLibc84h4bAZb6qX0cdZKHAm4akP9JXBxiP-s/edit?usp=sharing" target="_blank">código de conduta da disciplina</a>. É obrigatório uma seção final com uma declaração de uso de IA, conforme item 3 do código de conduta mencionado, caso você tenha utilizado alguma ferramenta de IA nesta atividade, mesmo que somente como apoio ao estudo do conteúdo.</td>
+        <td colspan="3">- O uso de ferramentas de IA deve ser feito com responsabilidade e seguindo o <a href="https://docs.google.com/document/d/1eUUiuaxLibc84h4bAZb6qX0cdZKHAm4akP9JXBxiP-s/edit?usp=sharing" target="_blank">código de conduta da disciplina</a>. Adicione uma seção de Declaração de Uso de IA, caso tenha utilizado, em um arquivo README.md na raiz do projeto.</td>
     </tr>
 </tbody>
 </table>
 
 ---
 
-1. Desenvolva um programa Java Web, utilizando Servlets e JSP, que permita aos usuários simularem um processo de login simples. O programa deve conter:
+## 📌 Descrição da Atividade
 
-    a. Uma página de login (`login.jsp`) com um formulário para o usuário inserir seu nome de usuário e senha.      
+Nesta atividade, você irá desenvolver um sistema web simples para cadastro e listagem de usuários, utilizando Java, Servlets, JSPs e seguindo uma organização mínimamente aderente ao padrão MVC (Model-View-Controller). O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação funcional que permita aos usuários se cadastrarem e visualizarem a lista de usuários cadastrados, oragnizada de modo a separar as responsabilidades entre os componentes de apresentação e lógica de negócios.
 
-    b. Um Servlet (`LoginServlet`) para processar as requisições de login, verificando se o nome de usuário e senha correspondem a um conjunto pré-definido de credenciais (por exemplo, `admin`/`admin123`).       
+> [!NOTE]
+> - Esta atividade é uma oportunidade para praticar a implementação de um sistema web utilizando Java e os conceitos de MVC, além de reforçar as boas práticas de codificação e organização de projetos.
+> - Ainda vamos nos aprofundar em assuntos relacionados a arquitetura e padrões para sistemas web, onde vamos entender que o padrão MVC passou por diversas evoluções e adaptações, dando origem a outros padrões como MVP, MVVM, etc. Mas para esta atividade, o foco é implementar uma organização mínima seguindo as práticas mais comuns em frameworks web modernos para deenvolvimento backend.
 
-    c. Se as credenciais forem válidas, o Servlet deve encaminhar o usuário para uma página de boas-vindas (`welcome.jsp`) que exibe uma mensagem personalizada com o nome do usuário.      
+## 🛠️ Requisitos Funcionais
 
-    d. Se as credenciais forem inválidas, o Servlet deve redirecionar o usuário de volta para a página de login, exibindo uma mensagem de erro indicando que o login falhou.        
+1. **RF01 - Cadastro de Usuário**: O sistema deve permitir que os usuários se cadastrem fornecendo informações como nome e email. Os dados devem ser validados para garantir que não sejam vazios e que o email seja único. Um ID único deve ser gerado para cada usuário cadastrado.
+2. **RF02 - Listagem de Usuários**: O sistema deve exibir uma lista de todos os usuários cadastrados, mostrando suas informações (nome e email).
 
----
+## 🛠️ Requisitos Não Funcionais
 
-2. Desenvolva um programa Java Web, utilizando Servlets e JSP, que permita aos usuários realizarem uma simulação de financiamento de um veículo. O programa deve conter:
+1. **RNF01 - Persistência de Dados**: Os dados dos usuários devem ser armazenados em memória (utilizando uma estrutura de dados como ArrayList) durante a execução da aplicação. Não é necessário implementar persistência em banco de dados para esta atividade.
+2. **RNF02 - Organização MVC**: A aplicação deve ser organizada seguindo o padrão MVC, com uma clara separação entre as camadas de Model (representação dos dados), View (interface do usuário) e Controller (lógica de controle).
+3. **RNF03 - Validação de Dados**: O sistema deve validar os dados de entrada para garantir que o nome e email não sejam vazios e que o email seja único.
+4. **RNF05 - Uso de Servlets e JSPs**: A aplicação deve utilizar Servlets para a lógica de controle e JSPs para a apresentação da interface do usuário. Os Servlets devem ser responsáveis por processar as requisições, interagir com o modelo de dados e encaminhar as respostas para as JSPs adequadas.
+5. **RNF06 - JSPs Limpas**: As páginas JSP devem ser organizadas de forma limpa e manutenível, separando o código HTML do código Java, utilizando EL e JSTL, por exemplo. Evite o uso de scriptlets em JSPs, bem como executar lógica de negócio dentro das páginas.
 
-    a. Uma página de simulação (`simulation.jsp`) com um formulário para o usuário inserir o valor do veículo, a entrada, a taxa de juros e o prazo do financiamento.  
+## 🛠️ Estrutura Sugerida do Projeto
 
-    b. Um Servlet (`SimulationServlet`) para processar as requisições de simulação, realizando os cálculos necessários para determinar o valor das parcelas mensais, o valor total pago ao final do financiamento e o valor total de juros pagos.       
+```
+├── src/java
+│   ├── model
+│   │   └── Usuario.java
+│   ├── service
+│   │   └── UsuarioService.java
+│   ├── servlets
+│   │   ├── UsuarioServlet.java
+├── src/webapp
+│   ├── index.html (formulário de cadastro)
+│   └── listar.jsp
+├── README.md
+```
 
-    c. O Servlet deve encaminhar o usuário para uma página de resultados (`results.jsp`) que exibe os resultados da simulação de forma clara e organizada, incluindo o valor das parcelas, o valor total pago e o valor total de juros.     
+## 🛠️ Dicas para Implementação
 
-> [!TIP]
-> - Utilize o método de amortização PRICE para realizar os cálculos do financiamento, e certifique-se de formatar os valores monetários de forma adequada na página de resultados.
+- Use a estrutura e código base fornecidos em aula como ponto de partida para a implementação.
 
----
+    - O código base do exemplo desenvolvido em aula, está na pasta [exemplos/exemplo_mvc](./../exemplos/exemplo_mvc/).
+    - Utilize-o como referência para a realização desta atividade.
 
-## Questões Teóricas
+- Certifique-se de seguir as boas práticas de codificação, como nomeação clara de variáveis e métodos, organização do código e comentários explicativos quando necessário.
 
-> [!NOTE] 
-> As questões a seguir devem ser respondidas em um documento README.md, em uma pasta `docs` no repositório. Utilize linguagem clara e objetiva, demonstrando compreensão dos conceitos relacionados a Servlets, JSPs e a arquitetura de aplicações Web.
-
-3. A arquitetura de uma aplicação Java Web utilizando Servlets e JSPs é baseada no modelo MVC (Model-View-Controller). Explique o papel de cada componente (Model, View e Controller) nessa arquitetura e como eles interagem entre si para processar as requisições dos usuários e gerar as respostas adequadas.
-
----
-
-4. O protocolo HTTP é baseado em um modelo de requisição-resposta. Explique como as requisições HTTP são processadas em uma aplicação Java Web utilizando Servlets, desde o momento em que o usuário envia uma requisição até o momento em que a resposta é gerada e enviada de volta ao cliente. Inclua detalhes sobre o ciclo de vida de um Servlet, como ele lida com os diferentes tipos de requisições (GET, POST, etc.) e como podemos configurar cabeçalhos HTTP, como o `Content-Type`.
-
----
-
-5. Uma das características importantes de uma aplicação Web é a forma como o conteúdo de resposta é gerado e formatado. Com base nisso, no ecosistema de desenvolvimento Java Web (com Servlets e JSPs), responda:
-
-    a) Explique como arquivos estáticos (como HTML, CSS e JavaScript) e arquivos dinâmicos (como JSPs) são utilizados em uma aplicação Java Web para gerar o conteúdo de resposta. 
-
-    b) Qual pasta do projeto é geralmente usada para armazenar arquivos estáticos? Por padrão, os arquivos estáticos, dentro dessa pasta, são acessíveis publicamente?
-
-    c) Qual pasta do projeto é geralmente usada para armazenar arquivos dinâmicos (JSPs), que representam a camada de visualização? Por padrão, os arquivos JSPs, dentro dessa pasta, são acessíveis publicamente?
+    - **Regras e boas práticas de codificação**: 
+        - Siga as convenções de codificação Java, como nomeação de classes em `PascalCase`, métodos e variáveis em `camelCase`, e mantenha o código limpo e organizado. 
+        - Evite código duplicado e utilize comentários para explicar partes mais complexas do código.
