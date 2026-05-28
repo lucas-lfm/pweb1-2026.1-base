@@ -9,7 +9,7 @@ Repositório para códigos e materiais utilizados na disciplina de Programação
 
 ---
 
-## 🔗 Documentações e Materiais de Apoio:**
+## 🔗 Documentações e Materiais de Apoio:
 
 ### Jakarta EE
 
