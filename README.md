@@ -24,9 +24,18 @@ Repositório para códigos e materiais utilizados na disciplina de Programação
 
 ---
 
-## ▶️ Cursos em Vídeo que Recomendo
+## ▶️ Cursos e Vídeoaulas que Recomendo
 
-> _⚠️ Em construção..._
+### **Gratuitos:**
+
+**Java e Spring:**
+
+- [Curso de Java + SPRING completo - Canal Fernanda Kipper](https://youtube.com/playlist?list=PLNCSWIsR6ADI_wMAx9F-Iu8Hs9HHxj4sb&si=3WML_j8vaeNkw951)
+- [Curso CRUD Angular + SPRING - Canal Loiane Groner](https://youtube.com/playlist?list=PLGxZ4Rq3BOBpwaVgAPxTxhdX_TfSVlTcY&si=OC9uQqcTKDnqd2NU)
+- [Super revisão de OO e SQL com Java e JDBC - Canal Nélio Alves](https://youtu.be/xC_yKw3MYX4?si=hbl3F-OpB4IviS7V)
+- [Seu primeiro projeto Java com Spring Boot - Canal Nélio Alves](https://youtu.be/D4frmIHAxEY?si=y0MhE8fmiRNoRg0l)
+- [Como criar uma REST API com Spring Boot - Canal AlgaWorks](https://youtu.be/9GWK9A79tEc?si=LuPmi8m3qNDiB5y5)
+- [Java SE: Polimorfismo - Udemy](https://www.udemy.com/course/java-se-polimorfismo/)
 
 ---
 
