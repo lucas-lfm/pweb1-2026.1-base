@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Usuários - MVC</title>
+  </head>
+  <body>
+    <!-- CAMADA VIEW — Padrão MVC
+
+         A View é responsável apenas pela apresentação dos dados ao usuário.
+         Ela não contém lógica de negócio — apenas coleta entradas (formulários)
+         e exibe saídas (resultados fornecidos pelo Controller).
+
+         Em aplicações Jakarta EE, a View pode ser:
+           - HTML estático (como este arquivo): adequado para formulários simples
+           - JSP (JavaServer Pages): permite embutir dados dinâmicos do servidor
+             usando Expression Language (EL), ex.: ${usuario.nome}
+           - Frameworks como JSF, Thymeleaf, etc.
+
+         Este arquivo é a View inicial: exibe o formulário de cadastro. -->
+    <h1>Cadastro de Usuário</h1>
+
+    <!-- O atributo "action" define a URL do Controller (Servlet) que
+         processará os dados. Deve corresponder ao valor em @WebServlet.
+         O método "POST" é usado para enviar dados (criar recurso),
+         em contraste com GET, que é usado para buscar/exibir dados. -->
+    <form action="usuarios" method="POST">
+      <!-- O atributo "name" de cada input define a chave usada pelo
+           Servlet para recuperar o valor: req.getParameter("nome") -->
+      <label>
+        <span>Nome: </span>
+        <input type="text" name="nome" />
+      </label>
+
+      <label>
+        <span>Email: </span>
+        <input type="email" name="email" />
+      </label>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </body>
+</html>
