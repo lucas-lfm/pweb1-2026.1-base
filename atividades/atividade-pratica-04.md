@@ -36,11 +36,11 @@
 
 ## 📌 Descrição da Atividade
 
-Nesta atividade, você irá desenvolver um sistema web simples para cadastro e listagem de usuários, utilizando Java, Servlets, JSPs e seguindo uma organização mínimamente aderente ao padrão MVC (Model-View-Controller). O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação funcional que permita aos usuários se cadastrarem e visualizarem a lista de usuários cadastrados, oragnizada de modo a separar as responsabilidades entre os componentes de apresentação e lógica de negócios.
+Nesta atividade, você irá desenvolver um sistema web simples para cadastro e listagem de usuários, utilizando Java, Servlets, JSPs e seguindo uma organização mínimamente aderente ao padrão MVC (Model-View-Controller). O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação funcional que permita aos usuários se cadastrarem e visualizarem a lista de usuários cadastrados, organizada de modo a separar as responsabilidades entre os componentes de apresentação e de lógica de negócio.
 
 > [!NOTE]
 > - Esta atividade é uma oportunidade para praticar a implementação de um sistema web utilizando Java e os conceitos de MVC, além de reforçar as boas práticas de codificação e organização de projetos.
-> - Ainda vamos nos aprofundar em assuntos relacionados a arquitetura e padrões para sistemas web, onde vamos entender que o padrão MVC passou por diversas evoluções e adaptações, dando origem a outros padrões como MVP, MVVM, etc. Mas para esta atividade, o foco é implementar uma organização mínima seguindo as práticas mais comuns em frameworks web modernos para deenvolvimento backend.
+> - Ainda vamos nos aprofundar em assuntos relacionados a arquitetura e padrões para sistemas web, onde vamos entender que o padrão MVC passou por diversas evoluções e adaptações, dando origem a outros padrões como MVP, MVVM, etc. Mas para esta atividade, o foco é implementar uma organização mínima seguindo as práticas mais comuns em frameworks web modernos para desenvolvimento backend.
 
 ## ▶️ Requisitos Funcionais
 
@@ -52,8 +52,11 @@ Nesta atividade, você irá desenvolver um sistema web simples para cadastro e l
 1. **RNF01 - Persistência de Dados**: Os dados dos usuários devem ser armazenados em memória (utilizando uma estrutura de dados como ArrayList) durante a execução da aplicação. Não é necessário implementar persistência em banco de dados para esta atividade.
 2. **RNF02 - Organização MVC**: A aplicação deve ser organizada seguindo o padrão MVC, com uma clara separação entre as camadas de Model (representação dos dados), View (interface do usuário) e Controller (lógica de controle).
 3. **RNF03 - Validação de Dados**: O sistema deve validar os dados de entrada para garantir que o nome e email não sejam vazios e que o email seja único.
-4. **RNF05 - Uso de Servlets e JSPs**: A aplicação deve utilizar Servlets para a lógica de controle e JSPs para a apresentação da interface do usuário. Os Servlets devem ser responsáveis por processar as requisições, interagir com o modelo de dados e encaminhar as respostas para as JSPs adequadas.
-5. **RNF06 - JSPs Limpas**: As páginas JSP devem ser organizadas de forma limpa e manutenível, separando o código HTML do código Java, utilizando EL e JSTL, por exemplo. Evite o uso de scriptlets em JSPs, bem como executar lógica de negócio dentro das páginas.
+    > [!NOTE]
+    > - Em caso de falha na validação, o sistema deve exibir mensagens de erro apropriadas para o usuário. Você pode implementar um HTML de retorno com o erro, encaminhar para uma JSP de erro, ou exibir a mensagem de erro na mesma página do formulário de cadastro (que, neste caso, precisar ser uma JSP). 
+    > - Retorne um `status code` HTTP adequado para cada tipo de resposta (por exemplo, `400 Bad Request` para falhas de validação). Consulte a seguinte documentação para entender melhor como trabalhar com códigos de status HTTP em Servlets: [HTTP Status Codes](https://tomcat.apache.org/tomcat-11.0-doc/servletapi/jakarta/servlet/http/HttpServletResponse.html).
+4. **RNF04 - Uso de Servlets e JSPs**: A aplicação deve utilizar Servlets para a lógica de controle e JSPs para a apresentação da interface do usuário. Os Servlets devem ser responsáveis por processar as requisições, interagir com o modelo de dados e encaminhar as respostas para as JSPs adequadas.
+5. **RNF05 - JSPs Limpas**: As páginas JSP devem ser organizadas de forma limpa e manutenível, separando o código HTML do código Java, utilizando EL e JSTL, por exemplo. Evite o uso de scriptlets em JSPs, bem como executar lógica de negócio dentro das páginas.
 
 ## 🛠️ Estrutura Sugerida do Projeto
 
@@ -66,8 +69,9 @@ Nesta atividade, você irá desenvolver um sistema web simples para cadastro e l
 │   ├── servlets
 │   │   ├── UsuarioServlet.java
 ├── src/webapp
-│   ├── index.html (formulário de cadastro)
-│   └── listar.jsp
+│   ├── index.html/jsp (formulário de cadastro)
+|   ├── listar.jsp
+|   └── erro.jsp (opcional, para exibir mensagens de erro)
 ├── README.md
 ```
 
