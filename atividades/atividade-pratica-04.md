@@ -42,7 +42,7 @@ Nesta atividade, você irá desenvolver um sistema web simples para cadastro e l
 > - Esta atividade é uma oportunidade para praticar a implementação de um sistema web utilizando Java e os conceitos de MVC, além de reforçar as boas práticas de codificação e organização de projetos.
 > - Ainda vamos nos aprofundar em assuntos relacionados a arquitetura e padrões para sistemas web, onde vamos entender que o padrão MVC passou por diversas evoluções e adaptações, dando origem a outros padrões como MVP, MVVM, etc. Mas para esta atividade, o foco é implementar uma organização mínima seguindo as práticas mais comuns em frameworks web modernos para deenvolvimento backend.
 
-## 🛠️ Requisitos Funcionais
+## ▶️ Requisitos Funcionais
 
 1. **RF01 - Cadastro de Usuário**: O sistema deve permitir que os usuários se cadastrem fornecendo informações como nome e email. Os dados devem ser validados para garantir que não sejam vazios e que o email seja único. Um ID único deve ser gerado para cada usuário cadastrado.
 2. **RF02 - Listagem de Usuários**: O sistema deve exibir uma lista de todos os usuários cadastrados, mostrando suas informações (nome e email).
@@ -71,7 +71,7 @@ Nesta atividade, você irá desenvolver um sistema web simples para cadastro e l
 ├── README.md
 ```
 
-## 🛠️ Dicas para Implementação
+## ℹ️ Dicas para Implementação
 
 - Use a estrutura e código base fornecidos em aula como ponto de partida para a implementação.
 
