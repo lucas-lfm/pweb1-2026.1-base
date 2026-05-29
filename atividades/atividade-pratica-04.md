@@ -87,3 +87,9 @@ Nesta atividade, você irá desenvolver um sistema web simples para cadastro e l
     - **Regras e boas práticas de codificação**: 
         - Siga as convenções de codificação Java, como nomeação de classes em `PascalCase`, métodos e variáveis em `camelCase`, e mantenha o código limpo e organizado. 
         - Evite código duplicado e utilize comentários para explicar partes mais complexas do código.
+
+## 🎯 Exemplo de UI
+
+Abaixo está um exemplo de como a aplicação pode ser apresentada, a nível de interface do usuário, utilizando JSPs para o formulário de cadastro e a listagem de usuários. Lembre-se de que a implementação pode variar, e o foco principal é atender aos requisitos funcionais e não funcionais estabelecidos.
+
+![Exemplo de Interface do Usuário](./img/demo_atv04.gif)
