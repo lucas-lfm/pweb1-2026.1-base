@@ -52,9 +52,9 @@ Nesta atividade, você irá desenvolver um sistema web simples para cadastro e l
 1. **RNF01 - Persistência de Dados**: Os dados dos usuários devem ser armazenados em memória (utilizando uma estrutura de dados como ArrayList) durante a execução da aplicação. Não é necessário implementar persistência em banco de dados para esta atividade.
 2. **RNF02 - Organização MVC**: A aplicação deve ser organizada seguindo o padrão MVC, com uma clara separação entre as camadas de Model (representação dos dados), View (interface do usuário) e Controller (lógica de controle).
 3. **RNF03 - Validação de Dados**: O sistema deve validar os dados de entrada para garantir que o nome e email não sejam vazios e que o email seja único.
-    > [!NOTE]
+    > **Regras de validação**:
     > - Em caso de falha na validação, o sistema deve exibir mensagens de erro apropriadas para o usuário. Você pode implementar um HTML de retorno com o erro, encaminhar para uma JSP de erro, ou exibir a mensagem de erro na mesma página do formulário de cadastro (que, neste caso, precisar ser uma JSP). 
-    > - Retorne um `status code` HTTP adequado para cada tipo de resposta (por exemplo, `400 Bad Request` para falhas de validação). Consulte a seguinte documentação para entender melhor como trabalhar com códigos de status HTTP em Servlets: [HTTP Status Codes](https://tomcat.apache.org/tomcat-11.0-doc/servletapi/jakarta/servlet/http/HttpServletResponse.html).
+    > - Retorne um `status code` HTTP adequado para cada tipo de resposta. Consulte a seguinte documentação para entender melhor como trabalhar com códigos de status HTTP em Servlets: [HTTP Status Codes](https://tomcat.apache.org/tomcat-11.0-doc/servletapi/jakarta/servlet/http/HttpServletResponse.html).
 4. **RNF04 - Uso de Servlets e JSPs**: A aplicação deve utilizar Servlets para a lógica de controle e JSPs para a apresentação da interface do usuário. Os Servlets devem ser responsáveis por processar as requisições, interagir com o modelo de dados e encaminhar as respostas para as JSPs adequadas.
 5. **RNF05 - JSPs Limpas**: As páginas JSP devem ser organizadas de forma limpa e manutenível, separando o código HTML do código Java, utilizando EL e JSTL, por exemplo. Evite o uso de scriptlets em JSPs, bem como executar lógica de negócio dentro das páginas.
 
