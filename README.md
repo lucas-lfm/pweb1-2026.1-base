@@ -41,4 +41,11 @@ Repositório para códigos e materiais utilizados na disciplina de Programação
 
 ## 📚 Livros e E-books que Recomendo
 
-> _⚠️ Em construção..._
+### **Java e Spring:**
+
+- **Java Web Tradicional: Jakarta EE, Servlets, JSPs, Web Services com JAX-WS/RS**
+
+  - [Head First Servlets and JSP - O'Reilly](https://github.com/huangmaomu/Books-1/blob/master/Head%20First%20Servlets%20and%20JSP%202nd%20Edition%20-%20O'Reilly.pdf) | [Amazon](https://www.amazon.com.br/Use-Cabe%C3%A7a-Servlets-Bryan-Basham/dp/8576082942)
+  - [Core Servlets and JavaServer Pages - Prentice Hall](https://github.com/yanices/Web3/blob/master/extra/core-servlets-and-javaserver-pages-volume-1.pdf) | [Amazon](https://www.amazon.com.br/Core-Servlets-JavaServer-Pages-JSP/dp/0130893404)
+  - [Java para Desenvolvimento Web - Caelum](https://docente.ifsc.edu.br/mello/livros/java/caelum-java-web-fj21-banco-de-dados-jdbc.pdf)
+  - [Web Services RESTful: Aprenda a criar web services RESTful em Java na nuvem do Google - Novatec](https://www.amazon.com.br/Web-Services-Restful-Aprenda-RESTful/dp/8575224549)
