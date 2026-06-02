@@ -1,8 +1,10 @@
-package com.proflucasmendes.exemplo_mvc.model;
+package com.proflucasmendes.exemplo_mvc.services;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
+
+import com.proflucasmendes.exemplo_mvc.model.Usuario;
 
 /**
  * CAMADA MODEL — Serviço / Lógica de Negócio
@@ -35,6 +37,17 @@ public class UsuarioService {
    * à View (JSP) como atributo de requisição.
    */
   public Usuario cadastrar(String nome, String email) {
+
+    // Validação simples: nome e email não podem ser vazios.
+    if (nome == null || nome.trim().isEmpty() || email == null || email.trim().isEmpty()) {
+      throw new IllegalArgumentException("O nome e o email do usuário são obrigatórios.");
+    }
+
+    // Validação: email deve ser único.
+    if (existeUsuarioComEmail(email)) {
+      throw new IllegalArgumentException("O email informado já está em uso.");
+    }
+
     Usuario novoUsuario = new Usuario(nome, email);
     long id = CONTADOR_ID.getAndIncrement();
 
@@ -43,6 +56,15 @@ public class UsuarioService {
     usuarios.add(novoUsuario);
 
     return novoUsuario;
+  }
+
+  public List<Usuario> listarTodos() {
+    System.out.println("Listando todos os usuários. Total: " + usuarios.size());
+    return new ArrayList<>(usuarios); // Retorna uma cópia para evitar modificações externas
+  }
+
+  private boolean existeUsuarioComEmail(String email) {
+    return usuarios.stream().anyMatch(u -> u.getEmail().equalsIgnoreCase(email));
   }
 
 }
