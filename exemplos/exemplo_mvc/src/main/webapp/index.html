@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Usuários - MVC</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
   <body>
     <!-- CAMADA VIEW — Padrão MVC
@@ -19,26 +20,29 @@
            - Frameworks como JSF, Thymeleaf, etc.
 
          Este arquivo é a View inicial: exibe o formulário de cadastro. -->
-    <h1>Cadastro de Usuário</h1>
 
-    <!-- O atributo "action" define a URL do Controller (Servlet) que
-         processará os dados. Deve corresponder ao valor em @WebServlet.
-         O método "POST" é usado para enviar dados (criar recurso),
-         em contraste com GET, que é usado para buscar/exibir dados. -->
-    <form action="usuarios" method="POST">
-      <!-- O atributo "name" de cada input define a chave usada pelo
-           Servlet para recuperar o valor: req.getParameter("nome") -->
-      <label>
-        <span>Nome: </span>
-        <input type="text" name="nome" />
-      </label>
+    <div class="container">
+      <h1>Cadastro de Usuário</h1>
 
-      <label>
-        <span>Email: </span>
-        <input type="email" name="email" />
-      </label>
+      <!-- O atributo "action" define a URL do Controller (Servlet) que
+           processará os dados. Deve corresponder ao valor em @WebServlet.
+           O método "POST" é usado para enviar dados (criar recurso),
+           em contraste com GET, que é usado para buscar/exibir dados. -->
+      <form action="usuarios" method="POST">
+        <!-- O atributo "name" de cada input define a chave usada pelo
+             Servlet para recuperar o valor: req.getParameter("nome") -->
+        <label>
+          <span>Nome: </span>
+          <input type="text" name="nome" />
+        </label>
 
-      <button type="submit">Cadastrar</button>
-    </form>
+        <label>
+          <span>Email: </span>
+          <input type="email" name="email" />
+        </label>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
   </body>
 </html>

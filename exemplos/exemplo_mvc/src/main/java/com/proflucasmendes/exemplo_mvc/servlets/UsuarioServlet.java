@@ -3,7 +3,7 @@ package com.proflucasmendes.exemplo_mvc.servlets;
 import java.io.IOException;
 
 import com.proflucasmendes.exemplo_mvc.model.Usuario;
-import com.proflucasmendes.exemplo_mvc.model.UsuarioService;
+import com.proflucasmendes.exemplo_mvc.services.UsuarioService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -61,10 +61,28 @@ public class UsuarioServlet extends HttpServlet {
     String email = req.getParameter("email");
 
     // 2. Delega a lógica de negócio ao Model
-    Usuario novoUsuario = service.cadastrar(nome, email);
+    try {
+      Usuario novoUsuario = service.cadastrar(nome, email);
+    } catch (IllegalArgumentException e) {
+      // Em caso de erro (ex.: validação falhou), podemos redirecionar para uma página de erro
+      // ou retornar uma mensagem de erro para a mesma página do formulário.
+      resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+      req.setAttribute("mensagem", e.getMessage());
+      req.getRequestDispatcher("/WEB-INF/views/erro.jsp").forward(req, resp);
+      return;
+    }
 
-    // 3. TODO: encaminhar o resultado para a View (JSP)
 
+    // 3. TODO: redirecionar para o endpoint de listagem (GET /usuarios) para mostrar o usuário recém-cadastrado
+    resp.sendRedirect(req.getContextPath() + "/usuarios");
+
+  }
+
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    // Exemplo de como listar todos os usuários cadastrados
+    req.setAttribute("usuarios", service.listarTodos());
+    req.getRequestDispatcher("/WEB-INF/views/listar.jsp").forward(req, resp);
   }
 
 }
