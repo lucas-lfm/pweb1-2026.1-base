@@ -64,7 +64,7 @@ Deseja-se construir uma aplicação que gerencie as informações de vendedores 
 
 Abaixo está o diagrama ER simplificado que representa o modelo de dados da aplicação:
 
-![Diagrama ER simplificado](er-diagram.png)
+![Diagrama ER simplificado](./img/er-diagram.png)
 
 - **Relacionamento entre Vendedor e Departamento:**
   - Cada vendedor pertence a um único departamento, enquanto cada departamento pode ter vários vendedores. A relação é de **muitos para um (n:1)**.
@@ -74,11 +74,11 @@ A nível de modelagem de domínio da aplicação, teremos duas entidades princip
 
 O diagrama de classes a seguir ilustra a estrutura das classes de domínio (entidades), bem como a associação entre elas:
 
-![Diagrama de Classe](diagrama-classe.png)
+![Diagrama de Classe](./img/diagrama-classe.png)
 
 O diagrama de objetos abaixo mostra um exemplo de como as instâncias das classes `Seller` e `Department`, em memória, podem se relacionar em tempo de execução:
 
-![Diagrama de Objetos](diagrama-objetos.png)
+![Diagrama de Objetos](./img/diagrama-objetos.png)
 
 ### ✅ Funcionalidades da Aplicação
 
@@ -231,13 +231,13 @@ public class Main {
 
 Nesta etapa, você irá implementar o padrão de projeto DAO (_Data Access Object_) para gerenciar as operações de acesso ao banco de dados para as entidades `Seller` e `Department`. O padrão DAO ajuda a separar a lógica de acesso a dados da lógica de negócios, promovendo uma arquitetura mais limpa e modular.
 
-![DAO Pattern](dao-2.jpg)
+![DAO Pattern](./img/dao-2.jpg)
 
 O problema que o padrão DAO resolve é a **complexidade e acoplamento** que pode surgir quando a lógica de acesso a dados é **misturada com a lógica de negócios e espalhada ao longo do código**.
 
 Ao utilizar o padrão DAO, você pode isolar as operações de banco de dados em classes específicas, facilitando a manutenção e evolução do código. Isso cria uma camada de abstração entre a aplicação e o banco de dados, permitindo que classes de serviço acessem os dados de forma consistente.
 
-![DAO Pattern](dao-3.jpg)
+![DAO Pattern](./img/dao-3.jpg)
 
 Esse padrão é geralmente composto por três componentes principais:
 
