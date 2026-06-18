@@ -420,6 +420,7 @@ import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
 import com.example.entities.Seller; // Certifique-se de importar a classe Seller corretamente
+import com.example.entities.Department; // Certifique-se de importar a classe Department corretamente
 
 public class SellerDAOImpl implements SellerDAO {
     private Connection conn;
