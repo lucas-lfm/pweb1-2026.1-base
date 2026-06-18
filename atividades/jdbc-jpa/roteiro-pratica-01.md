@@ -518,7 +518,6 @@ public class SellerDAOImpl implements SellerDAO {
 1. Como último componente da camada de acesso a dados, crie uma classe de fábrica chamada `DAOFactory` dentro do pacote `dao`, que será responsável por criar as instâncias dos DAOs.
 
 ```java
-import java.sql.Connection;
 import com.example.db.ConnectionFactory; // Certifique-se de importar a classe ConnectionFactory corretamente
 
 public class DAOFactory {
@@ -542,7 +541,9 @@ public class DAOFactory {
 Nesta etapa, você deve criar uma classe de teste para verificar se as operações de acesso a dados estão funcionando corretamente. Você pode utilizar a classe `Main` para realizar testes manuais.
 
 ```java
+import java.time.LocalDate;
 import java.util.List;
+
 import com.example.dao.DAOFactory; // Certifique-se de importar a classe DAOFactory corretamente
 import com.example.dao.DepartmentDAO; // Certifique-se de importar a interface DepartmentDAO corretamente
 import com.example.dao.SellerDAO; // Certifique-se de importar a interface SellerDAO corretamente
@@ -555,21 +556,27 @@ public class Main {
         SellerDAO sellerDAO = DAOFactory.createSellerDAO();
 
         // Teste de inserção de departamento
-        // Passamos null para o ID, pois ele será gerado automaticamente pelo banco de dados
+        // Passamos null para o ID, pois ele será gerado automaticamente pelo banco de
+        // dados
         Department newDepartment = new Department(null, "Marketing");
         departmentDAO.insert(newDepartment);
 
+        // Teste de consulta de departamentos
         List<Department> departments = departmentDAO.findAll();
+
         System.out.println("Departamentos encontrados:");
         for (Department dept : departments) {
             System.out.println(dept.getId() + ": " + dept.getName());
         }
 
         // Teste de inserção de vendedor
-        Seller newSeller = new Seller(null, "Maria Oliveira", "maria.oliveira@example.com", LocalDate.parse("1990-05-15"), 5000.0, 2); // Certifique-se de que o departamento com ID 2 exista no banco de dados, ou use um ID válido
+        Seller newSeller = new Seller(null, "Maria Oliveira", "maria.oliveira@example.com",
+                LocalDate.parse("1990-05-15"), 5000.0, departments.getLast()); // Associando o vendedor ao último departamento inserido (Marketing)
         sellerDAO.insert(newSeller);
 
+        // Teste de consulta de vendedores
         List<Seller> sellers = sellerDAO.findAll();
+
         System.out.println("Vendedores encontrados:");
         for (Seller seller : sellers) {
             System.out.println(seller.getId() + ": " + seller.getName());
