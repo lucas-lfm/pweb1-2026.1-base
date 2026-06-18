@@ -215,7 +215,7 @@ public class Main {
         Seller s1 = new Seller(1, "João Silva", "joao.silva@email.com", LocalDate.of(1990, 5, 15), 5000.0, d1);
 
         System.out.println("Departamento: " + s1.getDepartment().getName());
-        System.out.printf("Vendedor: %s, Email: %s%n \nData de Nascimento: %s, Salário Base: %.2f \n", s1.getName(), s1.getEmail(), s1.getBirthDate(), s1.getBaseSalary());
+        System.out.printf("Vendedor: %s, Email: %s%nData de Nascimento: %s, Salário Base: %.2f \n", s1.getName(), s1.getEmail(), s1.getBirthDate(), s1.getBaseSalary());
     }
 }
 ```
