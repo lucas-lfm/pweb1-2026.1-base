@@ -531,45 +531,45 @@ Para finalizar esta primeira parte, vamos inicializar o repositório Git e fazer
 
 1. Qual alternativa melhor define JPA?
 
-( ) Framework ORM
-( ) Banco de dados
-( ) Especificação
-( ) Driver JDBC
+    a) Framework ORM       
+    b) Banco de dados      
+    c) Especificação       
+    d) Driver JDBC     
 
 2. Em qual estado uma entidade é monitorada pelo contexto de persistência?
 
-( ) Transient
-( ) Managed
-( ) Detached
-( ) Removed
+    a) Transient       
+    b) Managed     
+    c) Detached        
+    d) Removed     
 
 3. Qual alternativa melhor define Hibernate?
 
-( ) Framework ORM
-( ) Banco de dados
-( ) Especificação
-( ) Driver JDBC
+    a) Framework ORM       
+    b) Banco de dados      
+    c) Especificação       
+    d) Driver JDBC     
 
 4. Qual alternativa melhor define ORM?
 
-( ) Especificação de persistência
-( ) Técnica de mapeamento objeto-relacional
-( ) Framework de persistência
-( ) Driver JDBC
+    a) Especificação de persistência       
+    b) Técnica de mapeamento objeto-relacional     
+    c) Framework de persistência       
+    d) Driver JDBC     
 
 5. Sobre ***EntityManager***, qual alternativa é verdadeira?
 
-( ) É utilizado para criar entidades
-( ) É utilizado para gerenciar o ciclo de vida das entidades
-( ) É utilizado para criar tabelas no banco de dados
-( ) É utilizado para executar comandos SQL 
+    a) É utilizado para criar entidades        
+    b) É utilizado para gerenciar o ciclo de vida das entidades        
+    c) É utilizado para criar tabelas no banco de dados        
+    d) É utilizado para executar comandos SQL      
 
 6. Sobre ***EntityManagerFactory***, qual alternativa é verdadeira?
 
-( ) É utilizado para gerenciar o ciclo de vida das entidades e só deve haver uma instância por aplicação
-( ) É utilizado para criar instâncias de EntityManager e só deve haver uma instância por aplicação
-( ) É utilizado para gerenciar o ciclo de vida das entidades e pode haver várias instâncias por aplicação
-( ) É utilizado para criar instâncias de EntityManager e pode haver várias instâncias por aplicação
+    a) É utilizado para gerenciar o ciclo de vida das entidades e só deve haver uma instância por aplicação        
+    b) É utilizado para criar instâncias de EntityManager e só deve haver uma instância por aplicação      
+    c) É utilizado para gerenciar o ciclo de vida das entidades e pode haver várias instâncias por aplicação       
+    d) É utilizado para criar instâncias de EntityManager e pode haver várias instâncias por aplicação     
 
 ---
 
