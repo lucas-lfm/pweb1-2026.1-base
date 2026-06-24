@@ -74,13 +74,9 @@ Sempre precisamos:
 * Percorrer ResultSets;
 * Criar objetos manualmente.
 
----
-
 **Forte acoplamento ao SQL**
 
 Uma simples mudança na estrutura da tabela pode exigir modificações em diversos pontos do sistema.
-
----
 
 **Conversão Manual**
 
@@ -138,9 +134,7 @@ Observe que os dois modelos representam o mesmo domínio de formas bem diferente
 >
 > - Object-Relational Impedance Mismatch ou **Descasamento de Impedância Objeto-Relacional**
 
-A diferente forma de representar o mesmo domínio gera problemas de conversão entre os dois modelos. Sem uma ferramenta de mapeamento, o programador precisa escrever muito código repetitivo para realizar essa conversão (como vimos usando JDBC puro).
-
----
+As diferentes formas de representar o mesmo domínio gera problemas de conversão entre os dois modelos. Sem uma ferramenta de mapeamento, o programador precisa escrever muito código repetitivo para realizar essa conversão (como vimos usando JDBC puro).
 
 ### Diferenças Entre os Modelos
 
@@ -184,20 +178,18 @@ Mesma informação, mas com representações diferentes.
 
 É uma técnica que permite mapear automaticamente:
 
-| Objeto Java    | Banco  |
-| -------------- | ------ |
-| Classe         | Tabela |
-| Objeto         | Linha  |
-| Atributo       | Coluna |
-| Associação     | FK     |
+| Orientação a Objetos | Modelo Relacional |
+| -------------------- | ----------------- |
+| Classe               | Tabela            |
+| Objeto               | Linha             |
+| Atributo             | Coluna            |
+| Associação           | FK                |
 
-Além disso, o ORM permite que o desenvolvedor trabalhe com objetos Java, sem precisar escrever SQL manualmente, enquanto mantém os objetos em um contexto de persistência, gerenciado pela ferramenta de ORM.
+Além disso, o ORM permite que o desenvolvedor trabalhe com objetos, sem precisar escrever SQL manualmente, enquanto os mantém em um contexto de persistência, gerenciado pela ferramenta de ORM.
 
 ![Diagrama de Mapeamento Objeto-Relacional](./img/orm-diagrama.png)
 
 A ténica de ORM faz o ***"meio de campo"*** entre os dois modelos, permitindo que o desenvolvedor trabalhe com objetos Java, enquanto a ferramenta de ORM cuida da conversão para SQL e da persistência no banco de dados.
-
----
 
 ### Objetivo do ORM
 
@@ -217,8 +209,6 @@ FROM seller
 INNER JOIN department ...
 ```
 
----
-
 ### Benefícios
 
 * Menos código repetitivo;
@@ -227,16 +217,12 @@ INNER JOIN department ...
 * Melhor integração com OO;
 * Portabilidade entre bancos.
 
----
-
 ### Outros problemas que o ORM resolve
 
 - **Contexto de persistência:** O ORM mantém os objetos em um contexto de persistência, permitindo que o desenvolvedor trabalhe com eles sem se preocupar com a sincronização com o banco de dados.
 - **Cache de objetos:** O ORM pode armazenar objetos em memória, reduzindo a necessidade de acessar o banco de dados repetidamente.
 - **Gerenciamento de transações:** O ORM facilita o gerenciamento de transações, garantindo a integridade dos dados.
 - **Lazy Loading:** O ORM pode carregar objetos somente quando necessário, melhorando o desempenho da aplicação.
-
----
 
 ### Limitações
 
@@ -255,8 +241,6 @@ ORM não elimina a necessidade de conhecer:
 Cada lingua de programação possui suas próprias ferramentas de ORM. Em Python, por exemplo, uma das ferramentas de ORM mais popular é o **SQLAlchemy**. No ecossistema .NET, a ferramenta de ORM mais popular é o **Entity Framework**. No PHP, com o framework Laravel, a ferramenta de ORM mais popular é o **Eloquent**. Desenvolvedores da plataforma Node.js podem utilizar o **Sequelize**, **Prisma**, entre outras, como ferramentas de ORM.
 
 No ecossistema Java, temos uma especificação padrão de ORM chamada **JPA (Jakarta Persistence API)**, que define como a persistência de dados deve ser realizada em aplicações Java. Com base nessa especificação, existem diversas implementações de ORM, sendo a mais popular o **Hibernate**.
-
----
 
 ### O Que é JPA?
 
@@ -280,8 +264,6 @@ A arquitetura de uma aplicação que utiliza JPA é composta por três camadas:
 
 As classes de domínio da aplicação são mapeadas para tabelas do banco de dados, sendo chamadas de **entidades**, e os objetos Java do domínio são gerenciados pela camada JPA, chamados então de **objetos persistentes**.
 
----
-
 ### O que é Hibernate?
 
 Como aprendemos, a JPA não executa nada sozinha. Para que a persistência funcione, precisamos de uma implementação da especificação. 
@@ -290,8 +272,6 @@ A implementação mais popular da JPA é o **Hibernate**, que é um framework de
 
 Você pode consultar a documentação do Hibernate em: [https://hibernate.org/orm/](https://hibernate.org/orm/). Aqui vamos nos concentrar na compreensão da especificação JPA e desenvolver nossos exemplos com base nela, utilizando o Hibernate como implementação.
 
----
-
 ### JPA x Hibernate
 
 | JPA              | Hibernate            |
@@ -299,8 +279,6 @@ Você pode consultar a documentação do Hibernate em: [https://hibernate.org/or
 | Especificação    | Implementação        |
 | Define contratos | Executa os contratos |
 | Padroniza APIs   | Implementa APIs      |
-
----
 
 ### Arquitetura de uma aplicação JPA com Hibernate
 
@@ -311,8 +289,6 @@ O Hibernate também disponibiliza uma API própria, que pode ser utilizada diret
 ![Arquitetura JPA com Hibernate](./img/hibernate-diagrama.png)
 
 > ✨ Observe que o Hibernate continua utilizando JDBC internamente.
-
----
 
 ### Principais Componentes da JPA
 
@@ -417,15 +393,11 @@ Para as práticas desenvolvidas nesta série de artigos, utilizaremos como exemp
   - ***relacionamento 1:N entre `instrutor` e `curso`:*** Um instrutor pode ministrar vários cursos, enquanto um curso é ministrado por apenas um instrutor;
   - ***relacionamento 1:N entre `curso` e `aula`:*** Um curso pode ter várias aulas, enquanto uma aula pertence a apenas um curso.
 
----
-
 ### Criando o Banco
 
 1. Abra sua instância do `pgAdmin` e crie um banco chamado `anuncios_jpa`.
 
 2. Você poderia criar as tabelas manualmente, mas vamos deixar que o Hibernate faça isso para nós. Na próxima parte, quando criarmos as entidades JPA em nossa aplicação, o Hibernate irá gerar automaticamente as tabelas no banco de dados.
-
----
 
 ### Estrutura Inicial do Projeto
 
