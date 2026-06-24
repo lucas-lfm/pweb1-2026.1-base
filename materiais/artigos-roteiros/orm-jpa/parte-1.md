@@ -296,7 +296,8 @@ Os principais conceitos e componentes da JPA são:
 
 **Entity**
 
-- Representa uma tabela do banco de dados, mapeada para uma classe de domínio em Java.
+- Uma entidade é uma classe persistente cujo estado pode ser armazenado e recuperado de um banco de dados através da JPA.
+- Podem ser mapeadas para tabelas do banco de dados, e cada instância da entidade corresponde a uma linha da tabela.
 - Contém atributos que representam as colunas da tabela, e métodos que representam as operações de persistência.
 
 **EntityManager**
@@ -315,6 +316,11 @@ Os principais conceitos e componentes da JPA são:
 - É um cache de objetos persistentes, que mantém os objetos em memória enquanto a transação está ativa.
 - Permite que o desenvolvedor trabalhe com os objetos sem se preocupar com a sincronização com o banco de dados.
 - É gerenciado através do `EntityManager`, que mantém os objetos em memória enquanto a transação está ativa, e sincroniza com o banco de dados quando a transação é finalizada.
+
+**Persistence Unit**
+
+- É uma unidade de configuração da JPA, que define como a persistência de dados deve ser realizada em uma aplicação.
+- É definida no arquivo `persistence.xml`, que contém informações sobre a conexão com o banco de dados, as entidades mapeadas, as propriedades de configuração do Hibernate, entre outras informações.
 
 **Estados das Entidades**
 
@@ -518,6 +524,52 @@ Para finalizar esta primeira parte, vamos inicializar o repositório Git e fazer
     > - `git push -u origin main`: envia o repositório local para o remoto, criando a branch `main` no GitHub.
 
 6. Acesse o repositório no GitHub e verifique se o código foi enviado corretamente.
+
+---
+
+## 🎯 Exercício Conceitual
+
+1. Qual alternativa melhor define JPA?
+
+( ) Framework ORM
+( ) Banco de dados
+( ) Especificação
+( ) Driver JDBC
+
+2. Em qual estado uma entidade é monitorada pelo contexto de persistência?
+
+( ) Transient
+( ) Managed
+( ) Detached
+( ) Removed
+
+3. Qual alternativa melhor define Hibernate?
+
+( ) Framework ORM
+( ) Banco de dados
+( ) Especificação
+( ) Driver JDBC
+
+4. Qual alternativa melhor define ORM?
+
+( ) Especificação de persistência
+( ) Técnica de mapeamento objeto-relacional
+( ) Framework de persistência
+( ) Driver JDBC
+
+5. Sobre ***EntityManager***, qual alternativa é verdadeira?
+
+( ) É utilizado para criar entidades
+( ) É utilizado para gerenciar o ciclo de vida das entidades
+( ) É utilizado para criar tabelas no banco de dados
+( ) É utilizado para executar comandos SQL 
+
+6. Sobre ***EntityManagerFactory***, qual alternativa é verdadeira?
+
+( ) É utilizado para gerenciar o ciclo de vida das entidades e só deve haver uma instância por aplicação
+( ) É utilizado para criar instâncias de EntityManager e só deve haver uma instância por aplicação
+( ) É utilizado para gerenciar o ciclo de vida das entidades e pode haver várias instâncias por aplicação
+( ) É utilizado para criar instâncias de EntityManager e pode haver várias instâncias por aplicação
 
 ---
 
