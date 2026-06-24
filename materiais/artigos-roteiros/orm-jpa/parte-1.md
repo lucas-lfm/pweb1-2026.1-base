@@ -282,7 +282,7 @@ Você pode consultar a documentação do Hibernate em: [https://hibernate.org/or
 
 ### Arquitetura de uma aplicação JPA com Hibernate
 
-Uma aplicação JPA com Hibernate utiliza a arquitetura de três camadas, onde a camada JPA é implementada pelo Hibernate. A aplicação Java interage com a camada JPA, que por sua vez interage com o banco de dados, utilizando JDBC para executar as operações de persistência.
+Uma aplicação JPA com Hibernate utiliza uma arquitetura onde a camada JPA é implementada pelo Hibernate. A camada de acesso a dados da aplicação (usando o padrão DAO ou Repository, por exemplo) permite que ela interaja com a camada de persistência JPA. Por sua vez, a camada de persistência, utiliza a implementação do Hibernate, que interage com o banco de dados, utilizando JDBC para executar as operações de persistência.
 
 O Hibernate também disponibiliza uma API própria, que pode ser utilizada diretamente, sem passar pela camada JPA. No entanto, é recomendável utilizar a API JPA, pois ela é padronizada e permite a portabilidade entre diferentes implementações de ORM.
 
@@ -385,7 +385,7 @@ Nesta prática utilizaremos:
 
 **Contexto e Modelo de Dados**
 
-Para as práticas desenvolvidas nesta série de artigos, utilizaremos como exemplo, o domínio de uma plataforma de cursos online, inicialmente com as entidades `instrutor`, `curso` e `aula`. Observe o diagrama ER abaixo, que representa o modelo de dados da aplicação:
+Para as práticas desenvolvidas nesta série de artigos, utilizaremos como exemplo o domínio de uma plataforma de cursos online, inicialmente com as entidades `instrutor`, `curso` e `aula`. Observe o diagrama ER abaixo, que representa o modelo de dados da aplicação:
 
 ![Diagrama ER](./img/modelo-er.png)
 
@@ -395,7 +395,7 @@ Para as práticas desenvolvidas nesta série de artigos, utilizaremos como exemp
 
 ### Criando o Banco
 
-1. Abra sua instância do `pgAdmin` e crie um banco chamado `anuncios_jpa`.
+1. Abra sua instância do `pgAdmin` e crie um banco chamado `cursos_pweb1`.
 
 2. Você poderia criar as tabelas manualmente, mas vamos deixar que o Hibernate faça isso para nós. Na próxima parte, quando criarmos as entidades JPA em nossa aplicação, o Hibernate irá gerar automaticamente as tabelas no banco de dados.
 
@@ -403,12 +403,12 @@ Para as práticas desenvolvidas nesta série de artigos, utilizaremos como exemp
 
 1. No VS Code, crie um novo projeto Maven vazio (sem `archetype`).
 
-2. Em `groupId` utilize `com.seunome` e em  `artifactId` utilize `anuncios_jpa`.
+2. Em `groupId` utilize `com.seunome` e em  `artifactId` utilize `cursos_pweb1`.
 
 Estrutura esperada:
 
 ```text
-anuncios_jpa
+cursos_pweb1
 
 ├── pom.xml
 |
@@ -467,12 +467,50 @@ Onde:
 </properties>
 ```
 
+### Primeiro Commit
+
+Para finalizar esta primeira parte, vamos inicializar o repositório Git e fazer o primeiro commit com a estrutura inicial do projeto. Em nossas práticas, iremos sempre versionar o código fonte utilizando o Git, com mensagens de commit descritivas seguindo o padrão [`Conventional Commits`](https://github.com/iuricode/padroes-de-commits).
+
+1. Abra um terminal na ásta raíz do projeto e inicialize o repositório Git e faça o primeiro commit com a estrutura inicial do projeto.
+
+    ```bash
+    git init
+    git add .
+    git commit -m ":tada: init: cria a estrutura inicial do projeto"
+    ```
+    > Acesse https://github.com/iuricode/padroes-de-commits para entender o padrão de mensagens de commit que utilizaremos.
+
+2. Se você nunca configurou o Git em sua máquina, provavelmente o comando acima irá gerar um erro. Nesse caso, configure seu nome e email com os comandos abaixo:
+
+    ```bash
+    git config --global user.name "Seu Nome"
+    git config --global user.email "seu.email@exemplo.com"
+    ```
+    > - Seu email deve ser o mesmo que você utiliza para acessar o GitHub.
+
+3. Crie um repositório no GitHub com o mesmo nome do projeto (`cursos_pweb1`) e faça o push do seu repositório local para o remoto.
+
+    ```bash
+    git branch -M main
+    git remote add origin <URL_DO_REPOSITORIO>
+    git push -u origin main
+    ```
+
+    > **Explicando:**
+    > - `git branch -M main`: renomeia a branch principal para `main` (padrão atual do GitHub);
+    > - `git remote add origin <URL_DO_REPOSITORIO>`: adiciona o repositório remoto do GitHub como `origin`;
+    > - `git push -u origin main`: envia o repositório local para o remoto, criando a branch `main` no GitHub.
+
+4. Acesse o repositório no GitHub e verifique se o código foi enviado corretamente.
+
 ---
+
+## ⏩ Próximos Passos
 
 Na próxima parte construiremos o projeto completo, incluindo:
 
-* Configuração detalhada do `persistence.xml`;
-* Criação das entidades `Instrutor`, `Curso` e `Aula` com seus respectivos atributos e relacionamentos;
-* Explicação aprofundada das anotações de mapeamento `@Entity`, `@Table`, `@Id`, `@GeneratedValue`, `@ManyToOne`, `@JoinColumn`;
-* Implementação completa das classes de domínio;
-* Primeira execução do Hibernate gerando SQL automaticamente.
+- Configuração detalhada do `persistence.xml`;
+- Criação das entidades `Instrutor`, `Curso` e `Aula` com seus respectivos atributos e relacionamentos;
+- Explicação aprofundada das anotações de mapeamento `@Entity`, `@Table`, `@Id`, `@GeneratedValue`, `@ManyToOne`, `@JoinColumn`;
+- Implementação completa das classes de domínio;
+- Primeira execução do Hibernate gerando SQL automaticamente.
