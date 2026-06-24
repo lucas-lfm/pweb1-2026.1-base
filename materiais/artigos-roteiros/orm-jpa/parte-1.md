@@ -420,19 +420,19 @@ cursos_pweb1
     └── test
 ```
 
-3. Crie os seguintes pacotes dentro do seu pacote base:
+3. Crie os pacotes `entities` e `db` dentro do seu pacote base:
 
 ```text
 src/main/java/com/seunome
-
-├── entities
-└── util
+                   ├── Main.java
+                   ├── entities
+                   └── db
 ```
 
 Onde:
 
 - **entities:** Entidades JPA (`Instrutor`, `Curso` e `Aula`).
-- **util:** Classes de configuração, como `PersistenceUtil`, que terá a responsabilidade de criar e gerenciar a `EntityManagerFactory`.
+- **db:** Classes de configuração da camada de persistência, que terão a responsabilidade, por exemplo, de criar e gerenciar a `EntityManagerFactory`.
 
 4. No arquivo `pom.xml` adicione as dependências do Hibernate e da JPA, além do driver JDBC do PostgreSQL.
 
