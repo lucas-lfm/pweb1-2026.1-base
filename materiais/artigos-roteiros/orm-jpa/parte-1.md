@@ -471,16 +471,32 @@ Onde:
 
 Para finalizar esta primeira parte, vamos inicializar o repositório Git e fazer o primeiro commit com a estrutura inicial do projeto. Em nossas práticas, iremos sempre versionar o código fonte utilizando o Git, com mensagens de commit descritivas seguindo o padrão [`Conventional Commits`](https://github.com/iuricode/padroes-de-commits).
 
-1. Abra um terminal na ásta raíz do projeto e inicialize o repositório Git e faça o primeiro commit com a estrutura inicial do projeto.
+1. Abra um terminal na pasta raíz do projeto e inicialize o repositório Git.
 
     ```bash
     git init
+    ```
+
+2. Crie um arquivo `.gitignore` na raiz do projeto e adicione as seguintes linhas:
+
+    ```text
+    target/
+    *.class
+    ```
+    > **Explicando:**
+    > - O arquivo `.gitignore` é utilizado para informar ao Git quais arquivos e pastas devem ser ignorados, ou seja, não versionados.
+    > - `target/` é a pasta onde o Maven gera os arquivos compilados e empacotados do projeto, que não precisam ser versionados.
+    > - `*.class` é utilizado para ignorar todos os arquivos `.class` gerados pelo compilador Java, que também não precisam ser versionados.
+
+3. No terminal, adicione todos os arquivos do projeto ao repositório Git e faça o primeiro commit:
+
+    ```bash
     git add .
     git commit -m ":tada: init: cria a estrutura inicial do projeto"
     ```
     > Acesse https://github.com/iuricode/padroes-de-commits para entender o padrão de mensagens de commit que utilizaremos.
 
-2. Se você nunca configurou o Git em sua máquina, provavelmente o comando acima irá gerar um erro. Nesse caso, configure seu nome e email com os comandos abaixo:
+4. Se você nunca configurou o Git em sua máquina, provavelmente o comando acima irá gerar um erro. Nesse caso, configure seu nome e email com os comandos abaixo:
 
     ```bash
     git config --global user.name "Seu Nome"
@@ -488,7 +504,7 @@ Para finalizar esta primeira parte, vamos inicializar o repositório Git e fazer
     ```
     > - Seu email deve ser o mesmo que você utiliza para acessar o GitHub.
 
-3. Crie um repositório no GitHub com o mesmo nome do projeto (`cursos_pweb1`) e faça o push do seu repositório local para o remoto.
+5. Crie um repositório no GitHub com o mesmo nome do projeto (`cursos_pweb1`) e faça o push do seu repositório local para o remoto.
 
     ```bash
     git branch -M main
@@ -501,7 +517,7 @@ Para finalizar esta primeira parte, vamos inicializar o repositório Git e fazer
     > - `git remote add origin <URL_DO_REPOSITORIO>`: adiciona o repositório remoto do GitHub como `origin`;
     > - `git push -u origin main`: envia o repositório local para o remoto, criando a branch `main` no GitHub.
 
-4. Acesse o repositório no GitHub e verifique se o código foi enviado corretamente.
+6. Acesse o repositório no GitHub e verifique se o código foi enviado corretamente.
 
 ---
 
