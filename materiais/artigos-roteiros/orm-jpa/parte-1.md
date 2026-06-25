@@ -238,7 +238,7 @@ ORM não elimina a necessidade de conhecer:
 <a id="jpa"></a>
 ## ⚙️ JPA e Hibernate
 
-Cada lingua de programação possui suas próprias ferramentas de ORM. Em Python, por exemplo, uma das ferramentas de ORM mais popular é o **SQLAlchemy**. No ecossistema .NET, a ferramenta de ORM mais popular é o **Entity Framework**. No PHP, com o framework Laravel, a ferramenta de ORM mais popular é o **Eloquent**. Desenvolvedores da plataforma Node.js podem utilizar o **Sequelize**, **Prisma**, entre outras, como ferramentas de ORM.
+Cada linguagem de programação possui suas próprias ferramentas de ORM. Em Python, por exemplo, uma das ferramentas de ORM mais popular é o **SQLAlchemy**. No ecossistema .NET, a ferramenta de ORM mais popular é o **Entity Framework**. No PHP, com o framework Laravel, a ferramenta de ORM mais popular é o **Eloquent**. Desenvolvedores da plataforma Node.js podem utilizar o **Sequelize**, **Prisma**, entre outras, como ferramentas de ORM.
 
 No ecossistema Java, temos uma especificação padrão de ORM chamada **JPA (Jakarta Persistence API)**, que define como a persistência de dados deve ser realizada em aplicações Java. Com base nessa especificação, existem diversas implementações de ORM, sendo a mais popular o **Hibernate**.
 
