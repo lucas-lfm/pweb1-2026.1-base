@@ -7,6 +7,7 @@ import com.proflucasmendes.exemplo_mvc.services.UsuarioService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -59,6 +60,9 @@ public class UsuarioServlet extends HttpServlet {
     // 1. Extrai os parâmetros enviados pelo formulário HTML (View)
     String nome = req.getParameter("nome");
     String email = req.getParameter("email");
+    String tema = req.getParameter("tema");
+
+    Cookie temaCookie = new Cookie("tema", tema);
 
     // 2. Delega a lógica de negócio ao Model
     try {
@@ -73,6 +77,10 @@ public class UsuarioServlet extends HttpServlet {
     }
 
 
+    temaCookie.setMaxAge(7 * 24 * 60 * 60);
+    temaCookie.setHttpOnly(true);
+    // temaCookie.setSecure(true);
+    resp.addCookie(temaCookie);
     // 3. TODO: redirecionar para o endpoint de listagem (GET /usuarios) para mostrar o usuário recém-cadastrado
     resp.sendRedirect(req.getContextPath() + "/usuarios");
 
