@@ -1,6 +1,6 @@
 # Série de Artigos: Fundamentos de ORM, JPA e Hibernate
 
-## ✨ Contexto 
+## ✨ Contexto
 
 Nas práticas anteriores utilizamos JDBC e o padrão DAO para acessar e manipular dados em um banco PostgreSQL. Embora essa abordagem seja extremamente importante para compreender os fundamentos da persistência de dados, ela exige uma quantidade significativa de código para conversão entre registros do banco de dados e objetos Java.
 
@@ -33,9 +33,9 @@ O conteúdo teórico presente em cada artigo é fundamental para a compreensão 
 
 Para acompanhar esta sequência de roteiros práticos você precisará ter instalado:
 
-- JDK 17 ou superior *(irei utilizar o JDK 21)*;
+- JDK 17 ou superior _(irei utilizar o JDK 21)_;
 - Maven 3.8 ou superior;
-- PostgreSQL 15 ou superior *(irei utilizar o PostgreSQL 18)*;
+- PostgreSQL 15 ou superior _(irei utilizar o PostgreSQL 18)_;
   - _pgAdmin 4, que já vem junto com o PostgreSQL._
 - VS Code com as extensões _Extension Pack for Java_ e _Spring Boot Extension Pack_.
 
@@ -44,3 +44,4 @@ Para acompanhar esta sequência de roteiros práticos você precisará ter insta
 ## Artigos e Roteiros
 
 - [Parte 1 - Introdução ao ORM, JPA e Hibernate](parte-1.md)
+- [Parte 2 - Configurando o Hibernate e mapeando entidades e relacionamentos](parte-2.md)
