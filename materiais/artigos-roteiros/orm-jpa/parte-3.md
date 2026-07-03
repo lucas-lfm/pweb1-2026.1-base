@@ -13,8 +13,14 @@ Ao final deste artigo você deverá ser capaz de:
 
 ## O que você encontrará neste artigo
 
+- [EntityManager na Prática](#entitymanager)
+- [JPQL - Java Persistence Query Language](#jpql)
+- [Implementando o Padrão DAO (Data Access Object) com JPA](#dao)
+- [Testando o padrão DAO implementado](#testando-dao)
+
 ---
 
+<a id="entitymanager"></a>
 ## 🏭 EntityManager na Prática
 
 Como vimos nos artigos anteriores, o `EntityManager` é a interface principal da JPA para interagir com o contexto de persistência. Ele é responsável por gerenciar o ciclo de vida das entidades, realizar operações de CRUD (Create, Read, Update, Delete) e gerenciar transações.
@@ -282,6 +288,7 @@ Se tudo estiver correto, você verá os registros das aulas associadas ao curso 
 
 ---
 
+<a id="jpql"></a>
 ## 📚 Explorando a JPQL (Java Persistence Query Language)
 
 Algumas vezes (algumas muitas vezes 😅), as operações de persistência básicas não são suficientes para atender às necessidades de consulta de uma aplicação. Nesses casos, a JPA oferece a **JPQL (Java Persistence Query Language)**, uma linguagem de consulta orientada a objetos que permite realizar consultas mais complexas e flexíveis em relação às consultas SQL tradicionais.
@@ -346,6 +353,7 @@ List<Instructor> instrutoresComCursosAtivos = query.getResultList();
 
 ---
 
+<a id="dao"></a>
 ## ⚙️ Implementando o Padrão DAO (Data Access Object) com JPA
 
 O padrão DAO _(Data Access Object)_ é um padrão de projeto que visa separar a lógica de acesso a dados da lógica de negócios da aplicação. Ele fornece uma interface para realizar operações de persistência em entidades, permitindo que a aplicação interaja com o banco de dados de forma mais modular e organizada.
@@ -612,6 +620,7 @@ Pare um pouco e tente implementar os DAOs para as entidades `Curso` e `Aula`, ut
 
 ---
 
+<a id="testando-dao"></a>
 ## ▶️ Testando o padrão DAO implementado
 
 Para finalizar, vamos testar as nossas classes DAO implementadas, garantindo que todas as operações de persistência estejam funcionando corretamente. Utilize a classe `Main` para realizar os testes, criando instâncias das entidades e chamando os métodos dos DAOs. Abaixo está um exemplo de como você pode testar a persistência de um instrutor utilizando o `InstrutorDAOImpl`: 
