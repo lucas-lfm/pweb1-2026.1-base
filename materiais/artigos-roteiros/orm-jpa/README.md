@@ -45,3 +45,4 @@ Para acompanhar esta sequência de roteiros práticos você precisará ter insta
 
 - [Parte 1 - Introdução ao ORM, JPA e Hibernate](parte-1.md)
 - [Parte 2 - Configurando o Hibernate e mapeando entidades e relacionamentos](parte-2.md)
+- [Parte 3 - Explorando o EntityManager, JPQL e Padrão DAO](parte-3.md)
