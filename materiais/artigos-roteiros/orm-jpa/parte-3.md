@@ -590,7 +590,7 @@ Vou explicar cada método da implementação do `InstrutorDAOImpl`:
 
 Perceba que as transações só são necessárias para operações de persistência, atualização e remoção, enquanto as operações de busca podem ser realizadas sem transações. Isso ocorre porque as operações de busca não alteram o estado do banco de dados, enquanto as operações de persistência, atualização e remoção podem modificar os dados armazenados.
 
-Já implementamos todos os métodos da interface `GenericDao` na classe `InstrutorDAOImpl`, garantindo que todas as operações de persistência para a entidade `Instrutor` sejam realizadas de forma consistente. Mas, podemos ir além de criar métodos adicionais para atender a necessidades específicas de consulta ou manipulação de dados. Por exemplo, podemos criar um método para buscar instrutores por nome, utilizando a JPQL:
+Já implementamos todos os métodos da interface `GenericDao` na classe `InstrutorDAOImpl`, garantindo que todas as operações de persistência para a entidade `Instrutor` sejam realizadas de forma consistente. Mas, podemos ir além, criando métodos adicionais para atender a necessidades específicas de consulta ou manipulação de dados. Por exemplo, podemos criar um método para buscar instrutores por nome, utilizando a JPQL:
 
 ```java
 public List<Instrutor> buscarPorNome(String nome) {
